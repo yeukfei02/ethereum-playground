@@ -19,7 +19,7 @@ describe("main.test", function () {
     const token = await Token.deploy();
 
     const ownerBalance = await token.balanceOf(owner.address);
-    expect(await token.totalSupply()).to.equal(ownerBalance);
+    expect(ownerBalance).to.equal(10000);
 
     await token.transfer(addr1.address, 100);
     expect(await token.balanceOf(addr1.address)).to.equal(100);
